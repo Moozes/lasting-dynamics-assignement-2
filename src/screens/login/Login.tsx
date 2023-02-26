@@ -1,9 +1,9 @@
 import { Text, View, Button, Heading, ScrollView } from "native-base";
 import { StyleSheet, Image } from "react-native";
 import { font } from "../../utils/utils";
-import type { StackScreenProps } from "../../types/types";
+import type { ScreenProps } from "../../types/types";
 
-type LoginProps = StackScreenProps;
+type LoginProps = ScreenProps;
 export default function Login({ navigation, route }: LoginProps) {
   return (
     <ScrollView style={s.container}>
