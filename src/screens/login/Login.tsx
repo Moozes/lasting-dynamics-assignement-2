@@ -1,4 +1,4 @@
-import { Text, View, Button, Heading, ScrollView } from "native-base";
+import { Text, View, Button, Heading, ScrollView, StatusBar } from "native-base";
 import { StyleSheet, Image } from "react-native";
 import { font } from "../../utils/utils";
 import type { ScreenProps } from "../../types/types";
@@ -7,6 +7,7 @@ type LoginProps = ScreenProps;
 export default function Login({ navigation, route }: LoginProps) {
   return (
     <ScrollView style={s.container}>
+      <StatusBar  backgroundColor="white" barStyle="dark-content" />
       <Image
         source={require("../../assets/backgrounds/woman.png")}
         alt="woman"

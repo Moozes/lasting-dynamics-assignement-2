@@ -14,10 +14,32 @@ type DashboardConainerProps = ScreenProps
 export default function DashboardConainer(props: DashboardConainerProps) {
     return (
         <Tab.Navigator screenOptions={{headerShown: false}} >
-            <Tab.Screen name="Home" component={Home} />
+            <Tab.Screen name="Home" component={Home}  options={{
+                // tabBarIcon: () => <Text>h</Text>,
+                // tabBarStyle: {
+                //     paddingBottom: 20,
+                //     height: 69,
+                // },
+                // tabBarIconStyle: {
+                //     paddingBottom: 5
+                // },
+                // tabBarItemStyle: {
+                //     backgroundColor: "red",
+                //     paddingTop: 8,
+                //     borderTopWidth: 1,
+                //     borderTopColor: "blue"
+                // },
+                // tabBarLabel: "hooome",
+                // tabBarInactiveTintColor: "red",
+                // tabBarInactiveBackgroundColor: "green",
+                // tabBarActiveTintColor: "violet",
+                // tabBarLabelStyle: {
+                //     fontSize: 20
+                // }
+            }} />
             <Tab.Screen name="Extract" component={Extract} />
             <Tab.Screen name="PagoPa" component={PagoPa} />
-            <Tab.Screen name="Profile" component={Profile} />
+            <Tab.Screen name="Profile" component={Profile}  />
         </Tab.Navigator>
     )
 }
