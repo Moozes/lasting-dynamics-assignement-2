@@ -1,20 +1,17 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-import React from 'react';
-import {View, Text} from 'react-native';
-import useHideSplashScreenOnMount from './src/hooks/useHideSplashScreenOnMount';
+import React from "react";
+import { View, Text } from "react-native";
+import useHideSplashScreenOnMount from "./src/hooks/useHideSplashScreenOnMount";
+import { NavigationContainer } from "@react-navigation/native";
+import Routes from "./routes";
+import { NativeBaseProvider } from "native-base";
 
 function App() {
-  useHideSplashScreenOnMount()
+  useHideSplashScreenOnMount();
 
   return (
-    <View>
-      <Text>hello world</Text>
-    </View>
+    <NativeBaseProvider>
+      <Routes />
+    </NativeBaseProvider>
   );
 }
 
