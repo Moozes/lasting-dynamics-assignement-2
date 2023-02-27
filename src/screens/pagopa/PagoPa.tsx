@@ -24,8 +24,8 @@ export default function PagoPa(props: PagoPaProps) {
       _contentContainerStyle={{ paddingBottom: 10 }}
     >
       <StatusBar
-        backgroundColor="transparent"
-        translucent
+        backgroundColor="#BF7EE6"
+        hidden
         barStyle="light-content"
       />
       <View style={s.header}>
@@ -72,7 +72,7 @@ const s = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingVertical: 38,
+    paddingVertical: 19,
     paddingHorizontal: 16,
   },
   headerIcon: {

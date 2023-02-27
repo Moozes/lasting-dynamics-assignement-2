@@ -13,7 +13,7 @@ export default function Home(props: HomeProps) {
 
   return (
     <ScrollView style={s.container} >
-      <StatusBar  backgroundColor="transparent" translucent barStyle="light-content" />
+      <StatusBar hidden  backgroundColor="#7476ED"  barStyle="light-content" />
       <View style={s.header}>
         <Text style={s.headerIcon}>IC</Text>
         <Text style={s.headerIcon}>IC</Text>
@@ -42,7 +42,7 @@ const s = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingVertical: 38,
+    paddingVertical: 19,
     paddingHorizontal: 16,
   },
   headerIcon: {
