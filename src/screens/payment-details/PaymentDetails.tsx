@@ -1,4 +1,13 @@
-import { ScrollView, View, Text, Heading, Divider, Button } from "native-base";
+import {
+  ScrollView,
+  View,
+  Text,
+  Heading,
+  Divider,
+  Button,
+  Image,
+  Pressable
+} from "native-base";
 import { StyleSheet } from "react-native";
 import { ScreenProps } from "../../types/types";
 import { font } from "../../utils/utils";
@@ -9,7 +18,13 @@ export default function PaymentDetails(props: Props) {
   return (
     <View style={s.container}>
       <View style={s.header}>
-        <Text style={s.headerIcon}>IC</Text>
+        <Pressable onPress={() => props.navigation.goBack()} >
+            <Image
+            source={require("../../assets/icons/arrow-left.png")}
+            alt="icon"
+            style={s.headerIcon}
+            />
+        </Pressable>
         <Text style={s.headerTitle}>Payment details</Text>
       </View>
       <ScrollView
@@ -18,7 +33,11 @@ export default function PaymentDetails(props: Props) {
       >
         <View style={s.titleContainer}>
           <Heading style={s.title}>Payment notice</Heading>
-          <Text style={s.icon}>IC</Text>
+          <Image
+            alt="pagopa"
+            source={require("../../assets/backgrounds/pagopa.png")}
+            style={s.icon}
+          />
         </View>
         <Divider style={s.divider} />
         <Text style={s.text}>Creditor</Text>
@@ -39,17 +58,20 @@ export default function PaymentDetails(props: Props) {
         <Divider style={s.divider} />
         <Text style={s.text}>Notice code</Text>
         <Text style={s.sub}>301000000014982222</Text>
-
       </ScrollView>
-        <View style={s.footer}>
-          <View style={s.footerRow}>
-            <Text style={s.footerText}>Total due</Text>
-            <Text style={s.footerPrice}>€ 1,234.99</Text>
-          </View>
-          <Button style={s.footerButton} _text={s.buttonText} _pressed={s.pressed}>
-            Pay now
-          </Button>
+      <View style={s.footer}>
+        <View style={s.footerRow}>
+          <Text style={s.footerText}>Total due</Text>
+          <Text style={s.footerPrice}>€ 1,234.99</Text>
         </View>
+        <Button
+          style={s.footerButton}
+          _text={s.buttonText}
+          _pressed={s.pressed}
+        >
+          Pay now
+        </Button>
+      </View>
     </View>
   );
 }
@@ -57,12 +79,15 @@ export default function PaymentDetails(props: Props) {
 const s = StyleSheet.create({
   container: {
     flexGrow: 1,
+    backgroundColor: "white",
   },
   header: {
     flexDirection: "row",
     backgroundColor: "#BF7EE6",
     paddingHorizontal: 24,
     paddingVertical: 20,
+    marginBottom: 24,
+    alignItems: "center",
   },
   headerIcon: {},
   headerTitle: {
@@ -82,18 +107,22 @@ const s = StyleSheet.create({
   titleContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
   },
   title: {
     ...font(600, 20, 24, "#3A3B7B"),
   },
-  icon: {},
+  icon: {
+    width: 40,
+    height: 40,
+  },
   divider: {
     marginVertical: 16,
   },
   section: {},
   text: {
     ...font(600, 16, 19, "#312E43"),
-    marginBottom: 4
+    marginBottom: 4,
   },
   sub: {
     ...font(400, 16, 19, "#6F6D7B"),
@@ -105,7 +134,7 @@ const s = StyleSheet.create({
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
     borderTopColor: "#EAEAEC",
-    borderTopWidth: 1
+    borderTopWidth: 1,
   },
   footerRow: {
     flexDirection: "row",
@@ -127,6 +156,6 @@ const s = StyleSheet.create({
     ...font(600, 18, 18, "white"),
   },
   pressed: {
-    opacity: 0.5
-  }
+    opacity: 0.5,
+  },
 });

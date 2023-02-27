@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { View, Text } from "native-base";
+import { View, Text, Image } from "native-base";
 import type { ViewStyleProp } from "../../../types/types";
 import { font } from "../../../utils/utils";
 
@@ -10,7 +10,7 @@ export default function UserCard(props: UserCardProps) {
   return (
     <View style={[s.card, props.style]}>
       <View style={s.header}>
-        <Text style={s.icon}>IC</Text>
+        <Image alt="icon" source={require('../../../assets/icons/user-circle.png')} style={s.icon}/>
         <Text style={s.title}>User summary</Text>
       </View>
       <View style={s.row1}>
@@ -53,6 +53,7 @@ const s = StyleSheet.create({
     flexDirection: "row",
     gap: 10,
     marginBottom: 18,
+    alignItems: "center"
   },
   icon: {},
   title: {

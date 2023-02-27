@@ -5,6 +5,7 @@ import {
   StatusBar,
   Heading,
   Pressable,
+  Image
 } from "native-base";
 import { StyleSheet } from "react-native";
 import { ScreenProps } from "../../types/types";
@@ -29,12 +30,12 @@ export default function PagoPa(props: PagoPaProps) {
         barStyle="light-content"
       />
       <View style={s.header}>
-        <Text style={s.headerIcon}>IC</Text>
-        <Text style={s.headerIcon}>IC</Text>
+        <Image alt="icon" source={require('../../assets/icons/logo.png')} style={s.headerIcon}/>
+        <Image alt="icon" source={require('../../assets/icons/chat.png')} style={s.headerIcon}/>
       </View>
       <View style={s.hero}>
         <Text style={s.heroText}>Tax payments</Text>
-        <Text style={s.heroIcon}>IC</Text>
+        <Image alt="logo2" source={require('../../assets/icons/logo2.png')} style={s.heroIcon}/>
       </View>
       <View style={s.content}>
         <Heading style={s.title}>Movements to pay</Heading>
@@ -76,7 +77,6 @@ const s = StyleSheet.create({
     paddingHorizontal: 16,
   },
   headerIcon: {
-    color: "white",
   },
   hero: {
     backgroundColor: "#BF7EE6",
@@ -87,12 +87,12 @@ const s = StyleSheet.create({
     borderBottomRightRadius: 16,
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center"
   },
   heroText: {
     ...font(600, 24, 28, "white"),
   },
   heroIcon: {
-    color: "white",
   },
   content: {
     paddingHorizontal: 16,

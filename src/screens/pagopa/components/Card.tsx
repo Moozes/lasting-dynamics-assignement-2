@@ -25,7 +25,7 @@ export default function Card({ title, date, price, style }: CardProps) {
         </View>
       </View>
       <View style={s.iconContainer}>
-        <Text style={s.icon}>IC</Text>
+        <Image alt="icon" source={require('../../../assets/icons/arrow-right.png')} style={s.icon}/>
       </View>
     </View>
   );

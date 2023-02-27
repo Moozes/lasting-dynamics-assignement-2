@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import { ScreenProps } from "../../types/types";
-import { Text, View, ScrollView, StatusBar, Heading } from "native-base";
+import { Text, View, ScrollView, StatusBar, Heading, Image } from "native-base";
 import { font } from "../../utils/utils";
 import UserCard from "./components/UserCard";
 import Contributions from "./components/Contributions";
@@ -15,8 +15,8 @@ export default function Home(props: HomeProps) {
     <ScrollView style={s.container} >
       <StatusBar hidden  backgroundColor="#7476ED"  barStyle="light-content" />
       <View style={s.header}>
-        <Text style={s.headerIcon}>IC</Text>
-        <Text style={s.headerIcon}>IC</Text>
+      <Image alt="icon" source={require('../../assets/icons/logo.png')} style={s.headerIcon}/>
+        <Image alt="icon" source={require('../../assets/icons/chat.png')} style={s.headerIcon}/>
       </View>
       <View style={s.hero}>
         <Heading style={s.heroHeading}>Hello, John S.</Heading>
@@ -46,7 +46,6 @@ const s = StyleSheet.create({
     paddingHorizontal: 16,
   },
   headerIcon: {
-    color: "white",
   },
   hero: {
     backgroundColor: "#7476ED",
