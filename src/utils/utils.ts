@@ -8,3 +8,7 @@ export function font(weight: number, size: number, lineHeight: number, color: st
         color,
     }
 }
+
+export function fakeAPI(ms: number) {
+    return new Promise((res, rej) => setTimeout(() => res(null), ms))
+}
