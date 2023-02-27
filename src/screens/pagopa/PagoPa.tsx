@@ -48,7 +48,7 @@ export default function PagoPa(props: PagoPaProps) {
           data.map((elm, i) => (
             <Pressable
               key={i}
-              onPress={() => props.navigation.navigate("Profile")}
+              onPress={() => props.navigation.navigate("payment-details")}
             >
               <Card
                 style={s.card}

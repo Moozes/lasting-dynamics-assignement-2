@@ -1,11 +1,12 @@
 import { Text, View } from "native-base";
 import { StyleSheet } from "react-native";
-import type { ScreenProps } from "../../types/types";
+import type { ScreenProps } from "../types/types";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Home from "../../screens/home/Home";
-import Extract from "../../screens/extract/Extract";
-import PagoPa from "../../screens/pagopa/PagoPa";
-import Profile from "../../screens/profile/Profile";
+import Home from "../screens/home/Home";
+import Extract from "../screens/extract/Extract";
+import PagoPa from "../screens/pagopa/PagoPa";
+import Profile from "../screens/profile/Profile";
+import PaymentDetails from "../screens/payment-details/PaymentDetails";
 
 const Tab = createBottomTabNavigator();
 
