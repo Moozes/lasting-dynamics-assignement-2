@@ -23,7 +23,11 @@ export default function PagoPa(props: PagoPaProps) {
       style={s.container}
       _contentContainerStyle={{ paddingBottom: 10 }}
     >
-      <StatusBar backgroundColor="#BF7EE6" barStyle="light-content" />
+      <StatusBar
+        backgroundColor="transparent"
+        translucent
+        barStyle="light-content"
+      />
       <View style={s.header}>
         <Text style={s.headerIcon}>IC</Text>
         <Text style={s.headerIcon}>IC</Text>
@@ -42,7 +46,10 @@ export default function PagoPa(props: PagoPaProps) {
           <ActivityIndicator size="large" />
         ) : (
           data.map((elm, i) => (
-            <Pressable key={i} onPress={() => props.navigation.navigate("Profile")} >
+            <Pressable
+              key={i}
+              onPress={() => props.navigation.navigate("Profile")}
+            >
               <Card
                 style={s.card}
                 title={elm.title}
@@ -58,13 +65,14 @@ export default function PagoPa(props: PagoPaProps) {
 }
 
 const s = StyleSheet.create({
-  container: {},
+  container: {
+  },
   header: {
     backgroundColor: "#BF7EE6",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingVertical: 19,
+    paddingVertical: 38,
     paddingHorizontal: 16,
   },
   headerIcon: {

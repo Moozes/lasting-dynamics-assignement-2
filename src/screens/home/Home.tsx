@@ -12,8 +12,8 @@ export default function Home(props: HomeProps) {
   const { loading } = useUserData();
 
   return (
-    <ScrollView style={s.container}>
-      <StatusBar backgroundColor="#7476ED" barStyle="light-content" />
+    <ScrollView style={s.container} >
+      <StatusBar  backgroundColor="transparent" translucent barStyle="light-content" />
       <View style={s.header}>
         <Text style={s.headerIcon}>IC</Text>
         <Text style={s.headerIcon}>IC</Text>
@@ -36,14 +36,13 @@ export default function Home(props: HomeProps) {
 
 const s = StyleSheet.create({
   container: {
-    // backgroundColor: "red"
   },
   header: {
     backgroundColor: "#7476ED",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingVertical: 19,
+    paddingVertical: 38,
     paddingHorizontal: 16,
   },
   headerIcon: {
