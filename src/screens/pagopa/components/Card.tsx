@@ -7,7 +7,7 @@ type CardProps = {
   title: string;
   date: string;
   price: string;
-  style?: ViewStyleProp
+  style?: ViewStyleProp;
 };
 export default function Card({ title, date, price, style }: CardProps) {
   return (
@@ -43,8 +43,7 @@ const s = StyleSheet.create({
     // shadowOffset: {width: 0, height: 0},
     // shadowRadius: 6,
   },
-  image: {
-  },
+  image: {},
   content: {
     flexGrow: 1,
     justifyContent: "space-around",
@@ -63,7 +62,7 @@ const s = StyleSheet.create({
     ...font(400, 14, 21, "#F83E5A"),
   },
   iconContainer: {
-    justifyContent: "center"
+    justifyContent: "center",
   },
   icon: {},
 });

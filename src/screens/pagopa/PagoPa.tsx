@@ -1,4 +1,11 @@
-import { Text, View, ScrollView, StatusBar, Heading } from "native-base";
+import {
+  Text,
+  View,
+  ScrollView,
+  StatusBar,
+  Heading,
+  Pressable,
+} from "native-base";
 import { StyleSheet } from "react-native";
 import { ScreenProps } from "../../types/types";
 import { font } from "../../utils/utils";
@@ -35,13 +42,14 @@ export default function PagoPa(props: PagoPaProps) {
           <ActivityIndicator size="large" />
         ) : (
           data.map((elm, i) => (
-            <Card
-              style={s.card}
-              key={i}
-              title={elm.title}
-              date={elm.date}
-              price={elm.price}
-            />
+            <Pressable key={i} onPress={() => props.navigation.navigate("Profile")} >
+              <Card
+                style={s.card}
+                title={elm.title}
+                date={elm.date}
+                price={elm.price}
+              />
+            </Pressable>
           ))
         )}
       </View>
