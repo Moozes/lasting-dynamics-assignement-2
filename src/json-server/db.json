@@ -1,0 +1,75 @@
+{
+    "user": [
+        {
+            "id": 1,
+            "name": "John S.",
+            "status": "Subscribed",
+            "birthday": "26/01/1994",
+            "city": "Barcelona",
+            "country": "ES",
+            "Number": 100
+        }
+    ],
+    "payment": [
+        {
+            "id": 1,
+            "title": "SUBJECTIVE AND SUPPLEME... ",
+            "date": "02/28/2022",
+            "price": "1,234.99"
+        },
+        {
+            "id": 2,
+            "title": "PAYMENT ON DEPOSIT",
+            "date": "31/01/2022",
+            "price": "234.99"
+        },
+        {
+            "id": 3,
+            "title": "PAYMENT ON DEPOSIT",
+            "date": "31/05/2021",
+            "price": "634.99"
+        },
+        {
+            "id": 4,
+            "title": "SUBJECTIVE AND SUPPLEME...",
+            "date": "02/28/2021",
+            "price": "1,434.94"
+        },
+        {
+            "id": 5,
+            "title": "PAYMENT ON DEPOSIT",
+            "date": "31/01/2021",
+            "price": "1,104.39"
+        },
+        {
+            "id": 6,
+            "title": "SUBJECTIVE AND SUPPLEME... ",
+            "date": "02/28/2022",
+            "price": "1,234.99"
+        },
+        {
+            "id": 7,
+            "title": "PAYMENT ON DEPOSIT",
+            "date": "31/01/2022",
+            "price": "234.99"
+        },
+        {
+            "id": 8,
+            "title": "PAYMENT ON DEPOSIT",
+            "date": "31/05/2021",
+            "price": "634.99"
+        },
+        {
+            "id": 9,
+            "title": "SUBJECTIVE AND SUPPLEME...",
+            "date": "02/28/2021",
+            "price": "1,434.94"
+        },
+        {
+            "id": 10,
+            "title": "PAYMENT ON DEPOSIT",
+            "date": "31/01/2021",
+            "price": "1,104.39"
+        }
+    ]
+}
