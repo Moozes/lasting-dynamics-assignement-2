@@ -9,7 +9,7 @@ import {
 } from "native-base";
 import { StyleSheet } from "react-native";
 import { ScreenProps } from "../../types/types";
-import { font } from "../../utils/utils";
+import { getFontStyles } from "../../utils/utils";
 import Card from "./components/Card";
 import { data } from "./components/data";
 import useData from "./hooks/useData";
@@ -49,13 +49,14 @@ export default function PagoPa(props: PagoPaProps) {
           data.map((elm, i) => (
             <Pressable
               key={i}
-              onPress={() => props.navigation.navigate("payment-details")}
+              onPress={() => props.navigation.navigate("payment-details", {})}
             >
               <Card
                 style={s.card}
-                title={elm.title}
-                date={elm.date}
-                price={elm.price}
+                {...elm}
+                // title={elm.title}
+                // date={elm.date}
+                // price={elm.price}
               />
             </Pressable>
           ))
@@ -90,7 +91,7 @@ const s = StyleSheet.create({
     alignItems: "center"
   },
   heroText: {
-    ...font(600, 24, 28, "white"),
+    ...getFontStyles(600, 24, 28, "white"),
   },
   heroIcon: {
   },
@@ -99,11 +100,11 @@ const s = StyleSheet.create({
     paddingTop: 24,
   },
   title: {
-    ...font(600, 24, 28, "#3A3B7B"),
+    ...getFontStyles(600, 24, 28, "#3A3B7B"),
     marginBottom: 8,
   },
   sub: {
-    ...font(400, 14, 21, "#6F6D7B"),
+    ...getFontStyles(400, 14, 21, "#6F6D7B"),
     marginBottom: 24,
   },
   card: {

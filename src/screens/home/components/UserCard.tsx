@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { View, Text, Image } from "native-base";
 import type { ViewStyleProp } from "../../../types/types";
-import { font } from "../../../utils/utils";
+import { getFontStyles } from "../../../utils/utils";
 
 type UserCardProps = {
   style?: ViewStyleProp;
@@ -57,7 +57,7 @@ const s = StyleSheet.create({
   },
   icon: {},
   title: {
-    ...font(600, 16, 19, "#3A3B7B"),
+    ...getFontStyles(600, 16, 19, "#3A3B7B"),
   },
   row1: {
     flexDirection: "row",
@@ -95,13 +95,13 @@ const s = StyleSheet.create({
     flexBasis: 0,
   },
   sub: {
-    ...font(400, 12, 14, "#6F6D7B"),
+    ...getFontStyles(400, 12, 14, "#6F6D7B"),
     marginBottom: 4
   },
   normal: {
-    ...font(400, 16, 19, "#312E43"),
+    ...getFontStyles(400, 16, 19, "#312E43"),
   },
   normalPrimary: {
-    ...font(400, 16, 19, "#3A3B7B"),
+    ...getFontStyles(400, 16, 19, "#3A3B7B"),
   },
 });

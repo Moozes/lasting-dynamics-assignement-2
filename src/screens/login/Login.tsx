@@ -1,6 +1,6 @@
 import { Text, View, Button, Heading, ScrollView, StatusBar } from "native-base";
 import { StyleSheet, Image } from "react-native";
-import { font } from "../../utils/utils";
+import { getFontStyles } from "../../utils/utils";
 import type { ScreenProps } from "../../types/types";
 
 type LoginProps = ScreenProps;
@@ -37,12 +37,12 @@ const s = StyleSheet.create({
     backgroundColor: "white",
   },
   title: {
-    ...font(600, 32, 38, "#3A3B7B"),
+    ...getFontStyles(600, 32, 38, "#3A3B7B"),
     marginBottom: 8,
     textAlign: "center",
   },
   text: {
-    ...font(400, 14, 21, "#6F6D7B"),
+    ...getFontStyles(400, 14, 21, "#6F6D7B"),
     marginBottom: 60,
     textAlign: "center",
   },
@@ -53,13 +53,13 @@ const s = StyleSheet.create({
     paddingVertical: 16,
   },
   buttonText: {
-    ...font(600, 18, 18, "#ffffff"),
+    ...getFontStyles(600, 18, 18, "#ffffff"),
   },
   buttonPressed: {
     opacity: 0.5,
   },
   link: {
-    ...font(400, 14, 21, "#3A3B7B"),
+    ...getFontStyles(400, 14, 21, "#3A3B7B"),
     textDecorationLine: "underline",
     textAlign: "center",
   },

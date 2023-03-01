@@ -1,4 +1,4 @@
-import { Text, View } from "native-base";
+import { Image, Text } from "native-base";
 import { StyleSheet } from "react-native";
 import type { ScreenProps } from "../types/types";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -6,45 +6,74 @@ import Home from "../screens/home/Home";
 import Extract from "../screens/extract/Extract";
 import PagoPa from "../screens/pagopa/PagoPa";
 import Profile from "../screens/profile/Profile";
-import PaymentDetails from "../screens/payment-details/PaymentDetails";
+import { getFontStyles } from "../utils/utils";
+
+const houseIcon = require("../assets/icons/house.png");
+const houseActiveIcon = require("../assets/icons/house-active.png");
+const pagopaIcon = require("../assets/icons/pagopa.png");
+const pagopaActiveIcon = require("../assets/icons/pagopa-active.png");
+const documentIcon = require("../assets/icons/document.png");
+const userIcon = require("../assets/icons/user.png");
 
 const Tab = createBottomTabNavigator();
 
+const screenOptions = {
+  headerShown: false,
+  tabBarLabel: ({ children, focused }: any) => (
+    <Text style={{ ...getFontStyles(400, 11, 13, focused ? "#7476ED" : "#83828E") }}>
+      {children}
+    </Text>
+  ),
+  tabBarStyle: {
+    height: 69,
+    paddingBottom: 20,
+}
+};
+const homeOptions: any = {
+  tabBarIcon: ({ focused }: { focused: boolean }) => (
+    <Image alt="icon" source={focused ? houseActiveIcon : houseIcon} />
+  ),
+};
+const extractOptions: any = {
+  tabBarIcon: () => <Image alt="icon" source={documentIcon} />,
+};
 
-type DashboardConainerProps = ScreenProps
+const pagopaOptions: any = {
+  tabBarIcon: ({ focused }: { focused: boolean }) => (
+    <Image alt="icon" source={focused ? pagopaActiveIcon : pagopaIcon} />
+  ),
+};
+
+const profilOptions: any = {
+  tabBarIcon: () => <Image alt="icon" source={userIcon} />,
+};
+
+type DashboardConainerProps = ScreenProps;
 export default function DashboardConainer(props: DashboardConainerProps) {
-    return (
-        <Tab.Navigator screenOptions={{headerShown: false}} >
-            <Tab.Screen name="Home" component={Home}  options={{
-                // tabBarIcon: () => <Text>h</Text>,
-                // tabBarStyle: {
-                //     paddingBottom: 20,
-                //     height: 69,
-                // },
-                // tabBarIconStyle: {
-                //     paddingBottom: 5
-                // },
-                // tabBarItemStyle: {
-                //     backgroundColor: "red",
-                //     paddingTop: 8,
-                //     borderTopWidth: 1,
-                //     borderTopColor: "blue"
-                // },
-                // tabBarLabel: "hooome",
-                // tabBarInactiveTintColor: "red",
-                // tabBarInactiveBackgroundColor: "green",
-                // tabBarActiveTintColor: "violet",
-                // tabBarLabelStyle: {
-                //     fontSize: 20
-                // }
-            }} />
-            <Tab.Screen name="Extract" component={Extract} />
-            <Tab.Screen name="PagoPa" component={PagoPa} />
-            <Tab.Screen name="Profile" component={Profile}  />
-        </Tab.Navigator>
-    )
+  return (
+    <Tab.Navigator screenOptions={screenOptions}>
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={homeOptions}
+      />
+      <Tab.Screen
+        name="Extract"
+        component={Extract}
+        options={extractOptions}
+      />
+      <Tab.Screen
+        name="PagoPa"
+        component={PagoPa}
+        options={pagopaOptions}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={profilOptions}
+      />
+    </Tab.Navigator>
+  );
 }
 
-const s = StyleSheet.create({
-    
-})
+const s = StyleSheet.create({});

@@ -1,7 +1,7 @@
 import { Heading, Image, View, Text } from "native-base";
 import { StyleSheet } from "react-native";
 import { ViewStyleProp } from "../../../types/types";
-import { font } from "../../../utils/utils";
+import { getFontStyles } from "../../../utils/utils";
 
 type CardProps = {
   title: string;
@@ -49,17 +49,17 @@ const s = StyleSheet.create({
     justifyContent: "space-around",
   },
   title: {
-    ...font(400, 14, 16, "#312E43"),
+    ...getFontStyles(400, 14, 16, "#312E43"),
   },
   footer: {
     flexDirection: "row",
     justifyContent: "space-between",
   },
   date: {
-    ...font(400, 14, 21, "#A5A5AA"),
+    ...getFontStyles(400, 14, 21, "#A5A5AA"),
   },
   price: {
-    ...font(400, 14, 21, "#F83E5A"),
+    ...getFontStyles(400, 14, 21, "#F83E5A"),
   },
   iconContainer: {
     justifyContent: "center",

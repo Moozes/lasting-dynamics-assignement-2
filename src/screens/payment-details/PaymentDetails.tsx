@@ -10,7 +10,7 @@ import {
 } from "native-base";
 import { StyleSheet } from "react-native";
 import { ScreenProps } from "../../types/types";
-import { font } from "../../utils/utils";
+import { getFontStyles } from "../../utils/utils";
 
 type Props = ScreenProps;
 
@@ -93,7 +93,7 @@ const s = StyleSheet.create({
   headerTitle: {
     flexGrow: 1,
     textAlign: "center",
-    ...font(400, 16, 19, "white"),
+    ...getFontStyles(400, 16, 19, "white"),
   },
   scrollView: {
     height: 400,
@@ -110,7 +110,7 @@ const s = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    ...font(600, 20, 24, "#3A3B7B"),
+    ...getFontStyles(600, 20, 24, "#3A3B7B"),
   },
   icon: {
     width: 40,
@@ -121,11 +121,11 @@ const s = StyleSheet.create({
   },
   section: {},
   text: {
-    ...font(600, 16, 19, "#312E43"),
+    ...getFontStyles(600, 16, 19, "#312E43"),
     marginBottom: 4,
   },
   sub: {
-    ...font(400, 16, 19, "#6F6D7B"),
+    ...getFontStyles(400, 16, 19, "#6F6D7B"),
   },
   footer: {
     // marginTop: 16,
@@ -142,10 +142,10 @@ const s = StyleSheet.create({
     marginBottom: 16,
   },
   footerText: {
-    ...font(600, 20, 24, "#312E43"),
+    ...getFontStyles(600, 20, 24, "#312E43"),
   },
   footerPrice: {
-    ...font(400, 20, 24, "#F83E5A"),
+    ...getFontStyles(400, 20, 24, "#F83E5A"),
   },
   footerButton: {
     backgroundColor: "#BF7EE6",
@@ -153,7 +153,7 @@ const s = StyleSheet.create({
     borderRadius: 4,
   },
   buttonText: {
-    ...font(600, 18, 18, "white"),
+    ...getFontStyles(600, 18, 18, "white"),
   },
   pressed: {
     opacity: 0.5,

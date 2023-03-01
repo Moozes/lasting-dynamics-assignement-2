@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { ScreenProps } from "../../types/types";
 import { Text, View, ScrollView, StatusBar, Heading, Image } from "native-base";
-import { font } from "../../utils/utils";
+import { getFontStyles } from "../../utils/utils";
 import UserCard from "./components/UserCard";
 import Contributions from "./components/Contributions";
 import useUserData from "./hooks/useUserData";
@@ -56,10 +56,10 @@ const s = StyleSheet.create({
     borderBottomRightRadius: 16,
   },
   heroHeading: {
-    ...font(400, 32, 38, "white"),
+    ...getFontStyles(400, 32, 38, "white"),
   },
   heroText: {
-    ...font(400, 14, 21, "white"),
+    ...getFontStyles(400, 14, 21, "white"),
   },
   content: {
     marginHorizontal: 16,
