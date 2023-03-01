@@ -14,6 +14,7 @@ import { data } from "./components/data";
 import useData from "./hooks/useData";
 import { ActivityIndicator } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import Header from "../../components/Header";
 
 
 export default function PagoPa() {
@@ -29,10 +30,7 @@ export default function PagoPa() {
         hidden
         barStyle="light-content"
       />
-      <View style={s.header}>
-        <Image alt="icon" source={require('../../assets/icons/logo.png')} style={s.headerIcon}/>
-        <Image alt="icon" source={require('../../assets/icons/chat.png')} style={s.headerIcon}/>
-      </View>
+      <Header bgColor="#BF7EE6"/>
       <View style={s.hero}>
         <Text style={s.heroText}>Tax payments</Text>
         <Image alt="logo2" source={require('../../assets/icons/logo2.png')} style={s.heroIcon}/>
@@ -68,16 +66,6 @@ export default function PagoPa() {
 
 const s = StyleSheet.create({
   container: {
-  },
-  header: {
-    backgroundColor: "#BF7EE6",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    paddingVertical: 19,
-    paddingHorizontal: 16,
-  },
-  headerIcon: {
   },
   hero: {
     backgroundColor: "#BF7EE6",

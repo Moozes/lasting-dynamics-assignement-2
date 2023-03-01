@@ -6,6 +6,7 @@ import UserCard from "./components/UserCard";
 import Contributions from "./components/Contributions";
 import useUserData from "./hooks/useUserData";
 import { ActivityIndicator } from "react-native";
+import Header from "../../components/Header";
 
 type HomeProps = ScreenProps;
 export default function Home(props: HomeProps) {
@@ -14,10 +15,7 @@ export default function Home(props: HomeProps) {
   return (
     <ScrollView style={s.container} >
       <StatusBar hidden  backgroundColor="#7476ED"  barStyle="light-content" />
-      <View style={s.header}>
-      <Image alt="icon" source={require('../../assets/icons/logo.png')} style={s.headerIcon}/>
-        <Image alt="icon" source={require('../../assets/icons/chat.png')} style={s.headerIcon}/>
-      </View>
+      <Header bgColor="#7476ED"/>
       <View style={s.hero}>
         <Heading style={s.heroHeading}>Hello, John S.</Heading>
         <Text style={s.heroText}>Welcome in Moneylia</Text>
@@ -36,16 +34,6 @@ export default function Home(props: HomeProps) {
 
 const s = StyleSheet.create({
   container: {
-  },
-  header: {
-    backgroundColor: "#7476ED",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    paddingVertical: 19,
-    paddingHorizontal: 16,
-  },
-  headerIcon: {
   },
   hero: {
     backgroundColor: "#7476ED",
