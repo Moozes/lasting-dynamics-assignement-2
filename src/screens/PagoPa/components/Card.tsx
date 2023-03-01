@@ -1,5 +1,6 @@
 import { Heading, Image, View, Text } from "native-base";
 import { StyleSheet } from "react-native";
+import { colors } from "../../../themes/colors";
 import { ViewStyleProp } from "../../../types/types";
 import { getFontStyles } from "../../../utils/utils";
 
@@ -39,9 +40,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     gap: 12,
     borderRadius: 8,
-    // shadowColor: "#14000000",
-    // shadowOffset: {width: 0, height: 0},
-    // shadowRadius: 6,
   },
   image: {},
   content: {
@@ -49,17 +47,17 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   title: {
-    ...getFontStyles(400, 14, 16, "#312E43"),
+    ...getFontStyles(400, 14, 16, colors.neutral["100"]),
   },
   footer: {
     flexDirection: "row",
     justifyContent: "space-between",
   },
   date: {
-    ...getFontStyles(400, 14, 21, "#A5A5AA"),
+    ...getFontStyles(400, 14, 21, colors.neutral["40"]),
   },
   price: {
-    ...getFontStyles(400, 14, 21, "#F83E5A"),
+    ...getFontStyles(400, 14, 21, colors.states.error),
   },
   iconContainer: {
     justifyContent: "center",

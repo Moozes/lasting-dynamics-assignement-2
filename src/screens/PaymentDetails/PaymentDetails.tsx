@@ -11,6 +11,7 @@ import {
 import { StyleSheet } from "react-native";
 import { getFontStyles } from "../../utils/utils";
 import { useNavigation } from "@react-navigation/native";
+import { colors } from "../../themes/colors";
 
 export default function PaymentDetails() {
   const navigation = useNavigation()
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: "row",
-    backgroundColor: "#BF7EE6",
+    backgroundColor: colors.services.rose,
     paddingHorizontal: 24,
     paddingVertical: 20,
     marginBottom: 24,
@@ -109,7 +110,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    ...getFontStyles(600, 20, 24, "#3A3B7B"),
+    ...getFontStyles(600, 20, 24, colors.secondary.default),
   },
   icon: {
     width: 40,
@@ -120,11 +121,11 @@ const styles = StyleSheet.create({
   },
   section: {},
   text: {
-    ...getFontStyles(600, 16, 19, "#312E43"),
+    ...getFontStyles(600, 16, 19, colors.neutral["100"]),
     marginBottom: 4,
   },
   sub: {
-    ...getFontStyles(400, 16, 19, "#6F6D7B"),
+    ...getFontStyles(400, 16, 19, colors.neutral["70"]),
   },
   footer: {
     // marginTop: 16,
@@ -132,7 +133,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
-    borderTopColor: "#EAEAEC",
+    borderTopColor: colors.neutral["10"],
     borderTopWidth: 1,
   },
   footerRow: {
@@ -141,13 +142,13 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   footerText: {
-    ...getFontStyles(600, 20, 24, "#312E43"),
+    ...getFontStyles(600, 20, 24, colors.neutral["100"]),
   },
   footerPrice: {
-    ...getFontStyles(400, 20, 24, "#F83E5A"),
+    ...getFontStyles(400, 20, 24, colors.states.error),
   },
   footerButton: {
-    backgroundColor: "#BF7EE6",
+    backgroundColor: colors.services.rose,
     paddingVertical: 16,
     borderRadius: 4,
   },

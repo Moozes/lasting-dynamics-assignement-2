@@ -6,14 +6,15 @@ import Contributions from "./components/Contributions";
 import useUserData from "./hooks/useUserData";
 import { ActivityIndicator } from "react-native";
 import Header from "../../components/Header";
+import { colors } from "../../themes/colors";
 
 export default function Home() {
   const { loading } = useUserData();
 
   return (
     <ScrollView style={styles.container} >
-      <StatusBar hidden  backgroundColor="#7476ED"  barStyle="light-content" />
-      <Header bgColor="#7476ED"/>
+      <StatusBar hidden />
+      <Header bgColor={colors.primary.default}/>
       <View style={styles.hero}>
         <Heading style={styles.heroHeading}>Hello, John S.</Heading>
         <Text style={styles.heroText}>Welcome in Moneylia</Text>
@@ -32,9 +33,10 @@ export default function Home() {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: colors.background.default
   },
   hero: {
-    backgroundColor: "#7476ED",
+    backgroundColor: colors.primary.default,
     paddingHorizontal: 16,
     paddingTop: 16,
     paddingBottom: 139,
@@ -42,10 +44,10 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 16,
   },
   heroHeading: {
-    ...getFontStyles(400, 32, 38, "white"),
+    ...getFontStyles(400, 32, 38, colors.neutral.white),
   },
   heroText: {
-    ...getFontStyles(400, 14, 21, "white"),
+    ...getFontStyles(400, 14, 21, colors.neutral.white),
   },
   content: {
     marginHorizontal: 16,

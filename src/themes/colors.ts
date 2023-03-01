@@ -21,7 +21,7 @@ export const colors = {
         "100" : "#312E43",
     },
     states: {
-        
+        error: "#F83E5A"
     },
     background: {
         default: "#F8F4FF"

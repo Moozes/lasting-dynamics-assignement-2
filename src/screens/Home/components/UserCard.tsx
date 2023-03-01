@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 import { View, Text, Image } from "native-base";
 import type { ViewStyleProp } from "../../../types/types";
 import { getFontStyles } from "../../../utils/utils";
+import { colors } from "../../../themes/colors";
 
 type UserCardProps = {
   style?: ViewStyleProp;
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
   },
   icon: {},
   title: {
-    ...getFontStyles(600, 16, 19, "#3A3B7B"),
+    ...getFontStyles(600, 16, 19, colors.secondary.default),
   },
   row1: {
     flexDirection: "row",
@@ -95,13 +96,13 @@ const styles = StyleSheet.create({
     flexBasis: 0,
   },
   sub: {
-    ...getFontStyles(400, 12, 14, "#6F6D7B"),
+    ...getFontStyles(400, 12, 14, colors.neutral["70"]),
     marginBottom: 4
   },
   normal: {
-    ...getFontStyles(400, 16, 19, "#312E43"),
+    ...getFontStyles(400, 16, 19, colors.neutral["100"]),
   },
   normalPrimary: {
-    ...getFontStyles(400, 16, 19, "#3A3B7B"),
+    ...getFontStyles(400, 16, 19, colors.secondary.default),
   },
 });

@@ -15,6 +15,7 @@ import useData from "./hooks/useData";
 import { ActivityIndicator } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Header from "../../components/Header";
+import { colors } from "../../themes/colors";
 
 
 export default function PagoPa() {
@@ -26,11 +27,9 @@ export default function PagoPa() {
       _contentContainerStyle={{ paddingBottom: 10 }}
     >
       <StatusBar
-        backgroundColor="#BF7EE6"
         hidden
-        barStyle="light-content"
       />
-      <Header bgColor="#BF7EE6"/>
+      <Header bgColor={colors.services.rose}/>
       <View style={styles.hero}>
         <Text style={styles.heroText}>Tax payments</Text>
         <Image alt="logo2" source={require('../../assets/icons/logo2.png')} style={styles.heroIcon}/>
@@ -66,9 +65,10 @@ export default function PagoPa() {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: colors.background.default
   },
   hero: {
-    backgroundColor: "#BF7EE6",
+    backgroundColor: colors.services.rose,
     paddingHorizontal: 16,
     paddingTop: 18,
     paddingBottom: 34,
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   heroText: {
-    ...getFontStyles(600, 24, 28, "white"),
+    ...getFontStyles(600, 24, 28, colors.neutral.white),
   },
   heroIcon: {
   },
@@ -88,11 +88,11 @@ const styles = StyleSheet.create({
     paddingTop: 24,
   },
   title: {
-    ...getFontStyles(600, 24, 28, "#3A3B7B"),
+    ...getFontStyles(600, 24, 28, colors.secondary.default),
     marginBottom: 8,
   },
   sub: {
-    ...getFontStyles(400, 14, 21, "#6F6D7B"),
+    ...getFontStyles(400, 14, 21, colors.neutral["70"]),
     marginBottom: 24,
   },
   card: {

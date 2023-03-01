@@ -7,6 +7,7 @@ import Extract from "../screens/Extract/Extract";
 import PagoPa from "../screens/PagoPa/PagoPa";
 import Profile from "../screens/Profile/Profile";
 import { getFontStyles } from "../utils/utils";
+import { colors } from "../themes/colors";
 
 const houseIcon = require("../assets/icons/house.png");
 const houseActiveIcon = require("../assets/icons/house-active.png");
@@ -20,14 +21,23 @@ const Tab = createBottomTabNavigator();
 const screenOptions = {
   headerShown: false,
   tabBarLabel: ({ children, focused }: any) => (
-    <Text style={{ ...getFontStyles(400, 11, 13, focused ? "#7476ED" : "#83828E") }}>
+    <Text
+      style={{
+        ...getFontStyles(
+          400,
+          11,
+          13,
+          focused ? colors.primary.default : colors.neutral["40"]
+        ),
+      }}
+    >
       {children}
     </Text>
   ),
   tabBarStyle: {
     height: 69,
     paddingBottom: 20,
-}
+  },
 };
 const homeOptions: any = {
   tabBarIcon: ({ focused }: { focused: boolean }) => (
@@ -51,27 +61,10 @@ const profilOptions: any = {
 export default function DashboardConainer() {
   return (
     <Tab.Navigator screenOptions={screenOptions}>
-      <Tab.Screen
-        name="Home"
-        component={Home}
-        options={homeOptions}
-      />
-      <Tab.Screen
-        name="Extract"
-        component={Extract}
-        options={extractOptions}
-      />
-      <Tab.Screen
-        name="PagoPa"
-        component={PagoPa}
-        options={pagopaOptions}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={profilOptions}
-      />
+      <Tab.Screen name="Home" component={Home} options={homeOptions} />
+      <Tab.Screen name="Extract" component={Extract} options={extractOptions} />
+      <Tab.Screen name="PagoPa" component={PagoPa} options={pagopaOptions} />
+      <Tab.Screen name="Profile" component={Profile} options={profilOptions} />
     </Tab.Navigator>
   );
 }
-

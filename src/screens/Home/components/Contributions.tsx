@@ -1,5 +1,6 @@
 import { Heading, View, Text, Image } from "native-base";
 import { StyleSheet } from "react-native";
+import { colors } from "../../../themes/colors";
 import { getFontStyles } from "../../../utils/utils";
 
 export default function Contributions() {
@@ -37,7 +38,7 @@ export default function Contributions() {
 const styles = StyleSheet.create({
     container: {},
     title: {
-        ...getFontStyles(500, 22, 26, "#3A3B7B"),
+        ...getFontStyles(500, 22, 26, colors.secondary.default),
         marginBottom: 16
     },
     row: {
@@ -58,13 +59,13 @@ const styles = StyleSheet.create({
     },
     sub: {
         marginBottom: 3,
-        ...getFontStyles(400, 12, 14, "#83828E")
+        ...getFontStyles(400, 12, 14, colors.neutral["60"])
     },
     normalRed: {
-        ...getFontStyles(400, 16, 19, "#F83E5A")
+        ...getFontStyles(400, 16, 19, colors.states.error)
     },
     normalPrimary: {
-        ...getFontStyles(400, 16, 19, "#3A3B7B")
+        ...getFontStyles(400, 16, 19, colors.secondary.default)
 
     },
 })
