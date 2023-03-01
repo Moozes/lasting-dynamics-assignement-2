@@ -15,58 +15,58 @@ import { useNavigation } from "@react-navigation/native";
 export default function PaymentDetails() {
   const navigation = useNavigation()
   return (
-    <View style={s.container}>
-      <View style={s.header}>
+    <View style={styles.container}>
+      <View style={styles.header}>
         <Pressable onPress={() => navigation.goBack()} >
             <Image
             source={require("../../assets/icons/arrow-left.png")}
             alt="icon"
-            style={s.headerIcon}
+            style={styles.headerIcon}
             />
         </Pressable>
-        <Text style={s.headerTitle}>Payment details</Text>
+        <Text style={styles.headerTitle}>Payment details</Text>
       </View>
       <ScrollView
-        style={s.scrollView}
-        contentContainerStyle={s.scrollViewContent}
+        style={styles.scrollView}
+        contentContainerStyle={styles.scrollViewContent}
       >
-        <View style={s.titleContainer}>
-          <Heading style={s.title}>Payment notice</Heading>
+        <View style={styles.titleContainer}>
+          <Heading style={styles.title}>Payment notice</Heading>
           <Image
             alt="pagopa"
             source={require("../../assets/backgrounds/pagopa.png")}
-            style={s.icon}
+            style={styles.icon}
           />
         </View>
-        <Divider style={s.divider} />
-        <Text style={s.text}>Creditor</Text>
-        <Text style={s.sub}>ENPACL</Text>
-        <Text style={s.sub}>Via del Caravaggio n. 78</Text>
-        <Text style={s.sub}>00147 (RM)</Text>
-        <Divider style={s.divider} />
-        <Text style={s.text}>Causal</Text>
-        <Text style={s.sub}>SUBJECTIVE AND SUPPLEMENTARY</Text>
-        <Text style={s.sub}> CONTRIBUTION YEAR 2021 EXPIRY</Text>
-        <Text style={s.sub}> 28-02-2022</Text>
-        <Divider style={s.divider} />
-        <Text style={s.text}>Expiry date</Text>
-        <Text style={s.sub}>02/28/2022</Text>
-        <Divider style={s.divider} />
-        <Text style={s.text}>Creditor tax code</Text>
-        <Text style={s.sub}>8011911704444</Text>
-        <Divider style={s.divider} />
-        <Text style={s.text}>Notice code</Text>
-        <Text style={s.sub}>301000000014982222</Text>
+        <Divider style={styles.divider} />
+        <Text style={styles.text}>Creditor</Text>
+        <Text style={styles.sub}>ENPACL</Text>
+        <Text style={styles.sub}>Via del Caravaggio n. 78</Text>
+        <Text style={styles.sub}>00147 (RM)</Text>
+        <Divider style={styles.divider} />
+        <Text style={styles.text}>Causal</Text>
+        <Text style={styles.sub}>SUBJECTIVE AND SUPPLEMENTARY</Text>
+        <Text style={styles.sub}> CONTRIBUTION YEAR 2021 EXPIRY</Text>
+        <Text style={styles.sub}> 28-02-2022</Text>
+        <Divider style={styles.divider} />
+        <Text style={styles.text}>Expiry date</Text>
+        <Text style={styles.sub}>02/28/2022</Text>
+        <Divider style={styles.divider} />
+        <Text style={styles.text}>Creditor tax code</Text>
+        <Text style={styles.sub}>8011911704444</Text>
+        <Divider style={styles.divider} />
+        <Text style={styles.text}>Notice code</Text>
+        <Text style={styles.sub}>301000000014982222</Text>
       </ScrollView>
-      <View style={s.footer}>
-        <View style={s.footerRow}>
-          <Text style={s.footerText}>Total due</Text>
-          <Text style={s.footerPrice}>€ 1,234.99</Text>
+      <View style={styles.footer}>
+        <View style={styles.footerRow}>
+          <Text style={styles.footerText}>Total due</Text>
+          <Text style={styles.footerPrice}>€ 1,234.99</Text>
         </View>
         <Button
-          style={s.footerButton}
-          _text={s.buttonText}
-          _pressed={s.pressed}
+          style={styles.footerButton}
+          _text={styles.buttonText}
+          _pressed={styles.pressed}
         >
           Pay now
         </Button>
@@ -75,7 +75,7 @@ export default function PaymentDetails() {
   );
 }
 
-const s = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     backgroundColor: "white",

@@ -4,37 +4,37 @@ import { getFontStyles } from "../../../utils/utils";
 
 export default function Contributions() {
     return (
-        <View style={s.container} >
-            <Heading style={s.title}>Contributions of 2022</Heading>
-            <View style={s.row}>
-                <View style={s.card}>
-                    <Image alt="icon" source={require('../../../assets/icons/chart-pie.png')} style={s.icon}/>
-                    <Text style={s.sub}>Paid</Text>
-                    <Text style={s.normalRed}>Unavailable</Text>
+        <View style={styles.container} >
+            <Heading style={styles.title}>Contributions of 2022</Heading>
+            <View style={styles.row}>
+                <View style={styles.card}>
+                    <Image alt="icon" source={require('../../../assets/icons/chart-pie.png')} style={styles.icon}/>
+                    <Text style={styles.sub}>Paid</Text>
+                    <Text style={styles.normalRed}>Unavailable</Text>
                 </View>
-                <View style={s.card}>
-                    <Image alt="icon" source={require('../../../assets/icons/credit-card.png')} style={s.icon}/>
-                    <Text style={s.sub}>Due</Text>
-                    <Text style={s.normalRed}>Unavailable</Text>
+                <View style={styles.card}>
+                    <Image alt="icon" source={require('../../../assets/icons/credit-card.png')} style={styles.icon}/>
+                    <Text style={styles.sub}>Due</Text>
+                    <Text style={styles.normalRed}>Unavailable</Text>
                 </View>
             </View>
-            <View style={s.row}>
-                <View style={s.card}>
-                    <Image alt="icon" source={require('../../../assets/icons/piggy-bank.png')} style={s.icon}/>
-                    <Text style={s.sub}>Advance payment</Text>
-                    <Text style={s.normalPrimary}>€ 1,230.00</Text>
+            <View style={styles.row}>
+                <View style={styles.card}>
+                    <Image alt="icon" source={require('../../../assets/icons/piggy-bank.png')} style={styles.icon}/>
+                    <Text style={styles.sub}>Advance payment</Text>
+                    <Text style={styles.normalPrimary}>€ 1,230.00</Text>
                 </View>
-                <View style={s.card}>
-                    <Image alt="icon" source={require('../../../assets/icons/bank.png')} style={s.icon}/>
-                    <Text style={s.sub}>Modularity</Text>
-                    <Text style={s.normalPrimary}>€ 340.59</Text>
+                <View style={styles.card}>
+                    <Image alt="icon" source={require('../../../assets/icons/bank.png')} style={styles.icon}/>
+                    <Text style={styles.sub}>Modularity</Text>
+                    <Text style={styles.normalPrimary}>€ 340.59</Text>
                 </View>
             </View>
         </View>
     )
 }
 
-const s = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {},
     title: {
         ...getFontStyles(500, 22, 26, "#3A3B7B"),

@@ -6,36 +6,36 @@ import { getFontStyles } from "../../../utils/utils";
 type UserCardProps = {
   style?: ViewStyleProp;
 };
-export default function UserCard(props: UserCardProps) {
+export default function UserCard({style}: UserCardProps) {
   return (
-    <View style={[s.card, props.style]}>
-      <View style={s.header}>
-        <Image alt="icon" source={require('../../../assets/icons/user-circle.png')} style={s.icon}/>
-        <Text style={s.title}>User summary</Text>
+    <View style={[styles.card, style]}>
+      <View style={styles.header}>
+        <Image alt="icon" source={require('../../../assets/icons/user-circle.png')} style={styles.icon}/>
+        <Text style={styles.title}>User summary</Text>
       </View>
-      <View style={s.row1}>
-        <View style={s.status}>
-          <Text style={s.sub}>Status</Text>
-          <Text style={s.normal}>Subscribed</Text>
+      <View style={styles.row1}>
+        <View style={styles.status}>
+          <Text style={styles.sub}>Status</Text>
+          <Text style={styles.normal}>Subscribed</Text>
         </View>
-        <View style={s.birthday}>
-          <Text style={s.sub}>Birthday</Text>
-          <Text style={s.normal}>26/10/1994</Text>
+        <View style={styles.birthday}>
+          <Text style={styles.sub}>Birthday</Text>
+          <Text style={styles.normal}>26/10/1994</Text>
         </View>
       </View>
-      <View style={s.row2}>
-        <View style={s.city}>
-          <Text style={s.sub}>City</Text>
-          <Text style={s.normalPrimary}>Barcelona</Text>
+      <View style={styles.row2}>
+        <View style={styles.city}>
+          <Text style={styles.sub}>City</Text>
+          <Text style={styles.normalPrimary}>Barcelona</Text>
         </View>
-        <View style={s.countryNumber}>
-          <View style={s.country}>
-            <Text style={s.sub}>Country</Text>
-            <Text style={s.normalPrimary}>ES</Text>
+        <View style={styles.countryNumber}>
+          <View style={styles.country}>
+            <Text style={styles.sub}>Country</Text>
+            <Text style={styles.normalPrimary}>ES</Text>
           </View>
-          <View style={s.number}>
-            <Text style={s.sub}>Number</Text>
-            <Text style={s.normalPrimary}>100</Text>
+          <View style={styles.number}>
+            <Text style={styles.sub}>Number</Text>
+            <Text style={styles.normalPrimary}>100</Text>
           </View>
         </View>
       </View>
@@ -43,7 +43,7 @@ export default function UserCard(props: UserCardProps) {
   );
 }
 
-const s = StyleSheet.create({
+const styles = StyleSheet.create({
   card: {
     backgroundColor: "white",
     borderRadius: 12,

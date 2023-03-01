@@ -48,8 +48,7 @@ const profilOptions: any = {
   tabBarIcon: () => <Image alt="icon" source={userIcon} />,
 };
 
-type DashboardConainerProps = ScreenProps;
-export default function DashboardConainer(props: DashboardConainerProps) {
+export default function DashboardConainer() {
   return (
     <Tab.Navigator screenOptions={screenOptions}>
       <Tab.Screen
@@ -76,4 +75,3 @@ export default function DashboardConainer(props: DashboardConainerProps) {
   );
 }
 
-const s = StyleSheet.create({});

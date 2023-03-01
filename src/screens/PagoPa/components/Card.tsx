@@ -11,27 +11,27 @@ type CardProps = {
 };
 export default function Card({ title, date, price, style }: CardProps) {
   return (
-    <View style={[s.container, style]}>
+    <View style={[styles.container, style]}>
       <Image
-        style={s.image}
+        style={styles.image}
         alt="pagopa"
         source={require("../../../assets/backgrounds/pagopa.png")}
       />
-      <View style={s.content}>
-        <Heading style={s.title}> {title} </Heading>
-        <View style={s.footer}>
-          <Text style={s.date}> {date} </Text>
-          <Text style={s.price}> € {price} </Text>
+      <View style={styles.content}>
+        <Heading style={styles.title}> {title} </Heading>
+        <View style={styles.footer}>
+          <Text style={styles.date}> {date} </Text>
+          <Text style={styles.price}> € {price} </Text>
         </View>
       </View>
-      <View style={s.iconContainer}>
-        <Image alt="icon" source={require('../../../assets/icons/arrow-right.png')} style={s.icon}/>
+      <View style={styles.iconContainer}>
+        <Image alt="icon" source={require('../../../assets/icons/arrow-right.png')} style={styles.icon}/>
       </View>
     </View>
   );
 }
 
-const s = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     backgroundColor: "white",

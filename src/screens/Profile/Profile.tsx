@@ -1,17 +1,10 @@
 import { Text, View } from "native-base";
-import { StyleSheet } from "react-native";
-import { ScreenProps } from "../../types/types";
 
-type ProfileProps = ScreenProps
 
-export default function Profile(props: ProfileProps) {
+export default function Profile() {
     return (
         <View>
             <Text>pro</Text>
         </View>
     )
 }
-
-const s = StyleSheet.create({
-    
-})

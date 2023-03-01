@@ -22,7 +22,7 @@ export default function PagoPa() {
   const navigation = useNavigation()
   return (
     <ScrollView
-      style={s.container}
+      style={styles.container}
       _contentContainerStyle={{ paddingBottom: 10 }}
     >
       <StatusBar
@@ -31,13 +31,13 @@ export default function PagoPa() {
         barStyle="light-content"
       />
       <Header bgColor="#BF7EE6"/>
-      <View style={s.hero}>
-        <Text style={s.heroText}>Tax payments</Text>
-        <Image alt="logo2" source={require('../../assets/icons/logo2.png')} style={s.heroIcon}/>
+      <View style={styles.hero}>
+        <Text style={styles.heroText}>Tax payments</Text>
+        <Image alt="logo2" source={require('../../assets/icons/logo2.png')} style={styles.heroIcon}/>
       </View>
-      <View style={s.content}>
-        <Heading style={s.title}>Movements to pay</Heading>
-        <Text style={s.sub}>
+      <View style={styles.content}>
+        <Heading style={styles.title}>Movements to pay</Heading>
+        <Text style={styles.sub}>
           View pending transactions for the past two years and proceed to
           payment.
         </Text>
@@ -50,7 +50,7 @@ export default function PagoPa() {
               onPress={() => navigation.navigate("payment-details" as never)}
             >
               <Card
-                style={s.card}
+                style={styles.card}
                 {...elm}
                 // title={elm.title}
                 // date={elm.date}
@@ -64,7 +64,7 @@ export default function PagoPa() {
   );
 }
 
-const s = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
   },
   hero: {

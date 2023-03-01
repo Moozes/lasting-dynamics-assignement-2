@@ -5,9 +5,9 @@ type Props = {
     bgColor : string
 }
 
-export default function Header(props: Props) {
+export default function Header({bgColor}: Props) {
   return (
-    <View style={[styles.header, {backgroundColor: props.bgColor}]}>
+    <View style={[styles.header, {backgroundColor: bgColor}]}>
       <Image
         alt="icon"
         source={require("../assets/icons/logo.png")}

@@ -6,31 +6,31 @@ import { useNavigation } from "@react-navigation/native";
 export default function Login() {
   const navigation = useNavigation()
   return (
-    <ScrollView style={s.container}>
+    <ScrollView style={styles.container}>
       <StatusBar  backgroundColor="white" barStyle="dark-content" />
       <Image
         source={require("../../assets/backgrounds/woman.png")}
         alt="woman"
       />
-      <Heading style={s.title}>Save your money</Heading>
-      <Text style={s.text}>
+      <Heading style={styles.title}>Save your money</Heading>
+      <Text style={styles.text}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est in quis
         erat a sit.
       </Text>
       <Button
-        style={s.button}
-        _text={s.buttonText}
-        _pressed={s.buttonPressed}
+        style={styles.button}
+        _text={styles.buttonText}
+        _pressed={styles.buttonPressed}
         onPress={() => navigation.navigate("dashboard" as never)}
       >
         Join for free
       </Button>
-      <Text style={s.link}>Don't have SPID or CIE? Find out more</Text>
+      <Text style={styles.link}>Don't have SPID or CIE? Find out more</Text>
     </ScrollView>
   );
 }
 
-const s = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     paddingHorizontal: 24,

@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { ScreenProps } from "../../types/types";
 import { Text, View, ScrollView, StatusBar, Heading, Image } from "native-base";
 import { getFontStyles } from "../../utils/utils";
 import UserCard from "./components/UserCard";
@@ -8,23 +7,22 @@ import useUserData from "./hooks/useUserData";
 import { ActivityIndicator } from "react-native";
 import Header from "../../components/Header";
 
-type HomeProps = ScreenProps;
-export default function Home(props: HomeProps) {
+export default function Home() {
   const { loading } = useUserData();
 
   return (
-    <ScrollView style={s.container} >
+    <ScrollView style={styles.container} >
       <StatusBar hidden  backgroundColor="#7476ED"  barStyle="light-content" />
       <Header bgColor="#7476ED"/>
-      <View style={s.hero}>
-        <Heading style={s.heroHeading}>Hello, John S.</Heading>
-        <Text style={s.heroText}>Welcome in Moneylia</Text>
+      <View style={styles.hero}>
+        <Heading style={styles.heroHeading}>Hello, John S.</Heading>
+        <Text style={styles.heroText}>Welcome in Moneylia</Text>
       </View>
       {loading ? (
-        <ActivityIndicator style={s.spinner} size="large" />
+        <ActivityIndicator style={styles.spinner} size="large" />
       ) : (
-        <View style={s.content}>
-          <UserCard style={s.userCard} />
+        <View style={styles.content}>
+          <UserCard style={styles.userCard} />
           <Contributions />
         </View>
       )}
@@ -32,7 +30,7 @@ export default function Home(props: HomeProps) {
   );
 }
 
-const s = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
   },
   hero: {
