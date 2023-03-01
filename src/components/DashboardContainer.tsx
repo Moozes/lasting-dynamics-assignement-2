@@ -2,10 +2,10 @@ import { Image, Text } from "native-base";
 import { StyleSheet } from "react-native";
 import type { ScreenProps } from "../types/types";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Home from "../screens/home/Home";
-import Extract from "../screens/extract/Extract";
-import PagoPa from "../screens/pagopa/PagoPa";
-import Profile from "../screens/profile/Profile";
+import Home from "../screens/Home/Home";
+import Extract from "../screens/Extract/Extract";
+import PagoPa from "../screens/PagoPa/PagoPa";
+import Profile from "../screens/Profile/Profile";
 import { getFontStyles } from "../utils/utils";
 
 const houseIcon = require("../assets/icons/house.png");

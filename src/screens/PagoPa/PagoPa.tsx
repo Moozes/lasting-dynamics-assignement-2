@@ -8,17 +8,17 @@ import {
   Image
 } from "native-base";
 import { StyleSheet } from "react-native";
-import { ScreenProps } from "../../types/types";
 import { getFontStyles } from "../../utils/utils";
 import Card from "./components/Card";
 import { data } from "./components/data";
 import useData from "./hooks/useData";
 import { ActivityIndicator } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-type PagoPaProps = ScreenProps;
 
-export default function PagoPa(props: PagoPaProps) {
+export default function PagoPa() {
   const { loading } = useData();
+  const navigation = useNavigation()
   return (
     <ScrollView
       style={s.container}
@@ -49,7 +49,7 @@ export default function PagoPa(props: PagoPaProps) {
           data.map((elm, i) => (
             <Pressable
               key={i}
-              onPress={() => props.navigation.navigate("payment-details", {})}
+              onPress={() => navigation.navigate("payment-details" as never)}
             >
               <Card
                 style={s.card}

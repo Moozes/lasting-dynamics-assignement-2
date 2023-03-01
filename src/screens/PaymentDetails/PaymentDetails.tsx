@@ -9,16 +9,15 @@ import {
   Pressable
 } from "native-base";
 import { StyleSheet } from "react-native";
-import { ScreenProps } from "../../types/types";
 import { getFontStyles } from "../../utils/utils";
+import { useNavigation } from "@react-navigation/native";
 
-type Props = ScreenProps;
-
-export default function PaymentDetails(props: Props) {
+export default function PaymentDetails() {
+  const navigation = useNavigation()
   return (
     <View style={s.container}>
       <View style={s.header}>
-        <Pressable onPress={() => props.navigation.goBack()} >
+        <Pressable onPress={() => navigation.goBack()} >
             <Image
             source={require("../../assets/icons/arrow-left.png")}
             alt="icon"

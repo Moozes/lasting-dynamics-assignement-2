@@ -1,10 +1,10 @@
 import { Text, View, Button, Heading, ScrollView, StatusBar } from "native-base";
 import { StyleSheet, Image } from "react-native";
 import { getFontStyles } from "../../utils/utils";
-import type { ScreenProps } from "../../types/types";
+import { useNavigation } from "@react-navigation/native";
 
-type LoginProps = ScreenProps;
-export default function Login({ navigation, route }: LoginProps) {
+export default function Login() {
+  const navigation = useNavigation()
   return (
     <ScrollView style={s.container}>
       <StatusBar  backgroundColor="white" barStyle="dark-content" />
@@ -21,7 +21,7 @@ export default function Login({ navigation, route }: LoginProps) {
         style={s.button}
         _text={s.buttonText}
         _pressed={s.buttonPressed}
-        onPress={() => navigation.navigate("dashboard")}
+        onPress={() => navigation.navigate("dashboard" as never)}
       >
         Join for free
       </Button>
