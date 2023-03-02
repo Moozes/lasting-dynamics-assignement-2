@@ -6,13 +6,10 @@ import PagoPa from "@src/screens/PagoPa/PagoPa";
 import Profile from "@src/screens/Profile/Profile";
 import { getFontStyles } from "@src/utils/utils";
 import { colors } from "@src/themes/colors";
-
-const houseIcon = require("../assets/icons/house.png");
-const houseActiveIcon = require("../assets/icons/house-active.png");
-const pagopaIcon = require("../assets/icons/pagopa.png");
-const pagopaActiveIcon = require("../assets/icons/pagopa-active.png");
-const documentIcon = require("../assets/icons/document.png");
-const userIcon = require("../assets/icons/user.png");
+import HouseIcon from "@src/assets/icons/house.svg";
+import DocumentIcon from "@src/assets/icons/document.svg";
+import UserIcon from "@src/assets/icons/user.svg";
+import PagopaIcon from "@src/assets/icons/pagopa.svg";
 
 const Tab = createBottomTabNavigator();
 
@@ -39,21 +36,21 @@ const screenOptions = {
 };
 const homeOptions: any = {
   tabBarIcon: ({ focused }: { focused: boolean }) => (
-    <Image alt="icon" source={focused ? houseActiveIcon : houseIcon} />
+    <HouseIcon fill={focused ? colors.primary.default : colors.neutral["40"]} />
   ),
 };
 const extractOptions: any = {
-  tabBarIcon: () => <Image alt="icon" source={documentIcon} />,
+  tabBarIcon: ({ focused }: { focused: boolean }) => <DocumentIcon fill={focused ? colors.primary.default : colors.neutral["40"]} />,
 };
 
 const pagopaOptions: any = {
   tabBarIcon: ({ focused }: { focused: boolean }) => (
-    <Image alt="icon" source={focused ? pagopaActiveIcon : pagopaIcon} />
+    <PagopaIcon fill={focused ? colors.primary.default : colors.neutral["40"]} />
   ),
 };
 
 const profilOptions: any = {
-  tabBarIcon: () => <Image alt="icon" source={userIcon} />,
+  tabBarIcon: ({ focused }: { focused: boolean }) => <UserIcon fill={focused ? colors.primary.default : colors.neutral["40"]} />,
 };
 
 export default function DashboardConainer() {
