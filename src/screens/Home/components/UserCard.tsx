@@ -4,6 +4,8 @@ import { ViewStyleProp } from "@src/types/types";
 import { getFontStyles } from "@src/utils/utils";
 import { colors } from "@src/themes/colors";
 
+const userCircleIcon = require('@src/assets/icons/user-circle.png')
+
 type UserCardProps = {
   style?: ViewStyleProp;
 };
@@ -11,7 +13,7 @@ export default function UserCard({style}: UserCardProps) {
   return (
     <View style={[styles.card, style]}>
       <View style={styles.header}>
-        <Image alt="icon" source={require('../../../assets/icons/user-circle.png')} style={styles.icon}/>
+        <Image alt="icon" source={userCircleIcon} style={styles.icon}/>
         <Text style={styles.title}>User summary</Text>
       </View>
       <View style={styles.row1}>

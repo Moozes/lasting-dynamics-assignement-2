@@ -4,6 +4,9 @@ import { colors } from "@src/themes/colors";
 import { ViewStyleProp } from "@src/types/types";
 import { getFontStyles } from "@src/utils/utils";
 
+const pagopaImg = require("@src/assets/backgrounds/pagopa.png")
+const rightArrowIcon = require('@src/assets/icons/arrow-right.png')
+
 type CardProps = {
   title: string;
   date: string;
@@ -16,7 +19,7 @@ export default function Card({ title, date, price, style }: CardProps) {
       <Image
         style={styles.image}
         alt="pagopa"
-        source={require("../../../assets/backgrounds/pagopa.png")}
+        source={pagopaImg}
       />
       <View style={styles.content}>
         <Heading style={styles.title}> {title} </Heading>
@@ -26,7 +29,7 @@ export default function Card({ title, date, price, style }: CardProps) {
         </View>
       </View>
       <View style={styles.iconContainer}>
-        <Image alt="icon" source={require('../../../assets/icons/arrow-right.png')} style={styles.icon}/>
+        <Image alt="icon" source={rightArrowIcon} style={styles.icon}/>
       </View>
     </View>
   );

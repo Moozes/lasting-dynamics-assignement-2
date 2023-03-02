@@ -12,6 +12,8 @@ import { StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { getFontStyles } from "@src/utils/utils";
 import { colors } from "@src/themes/colors";
+const leftArrowIcon = require("@src/assets/icons/arrow-left.png")
+const pagopaImg = require("@src/assets/backgrounds/pagopa.png")
 
 export default function PaymentDetails() {
   const navigation = useNavigation()
@@ -20,7 +22,7 @@ export default function PaymentDetails() {
       <View style={styles.header}>
         <Pressable onPress={() => navigation.goBack()} >
             <Image
-            source={require("../../assets/icons/arrow-left.png")}
+            source={leftArrowIcon}
             alt="icon"
             style={styles.headerIcon}
             />
@@ -35,7 +37,7 @@ export default function PaymentDetails() {
           <Heading style={styles.title}>Payment notice</Heading>
           <Image
             alt="pagopa"
-            source={require("../../assets/backgrounds/pagopa.png")}
+            source={pagopaImg}
             style={styles.icon}
           />
         </View>

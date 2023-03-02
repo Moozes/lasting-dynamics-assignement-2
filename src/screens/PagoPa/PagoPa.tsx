@@ -16,7 +16,7 @@ import { useNavigation } from "@react-navigation/native";
 import { getFontStyles } from "@src/utils/utils";
 import Header from "@src/components/Header";
 import { colors } from "@src/themes/colors";
-
+const logo2Icon = require('@src/assets/icons/logo2.png')
 
 export default function PagoPa() {
   const { loading } = useData();
@@ -32,7 +32,7 @@ export default function PagoPa() {
       <Header bgColor={colors.services.rose}/>
       <View style={styles.hero}>
         <Text style={styles.heroText}>Tax payments</Text>
-        <Image alt="logo2" source={require('../../assets/icons/logo2.png')} style={styles.heroIcon}/>
+        <Image alt="logo2" source={logo2Icon} style={styles.heroIcon}/>
       </View>
       <View style={styles.content}>
         <Heading style={styles.title}>Movements to pay</Heading>

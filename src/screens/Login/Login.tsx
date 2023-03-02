@@ -4,13 +4,15 @@ import { useNavigation } from "@react-navigation/native";
 import { getFontStyles } from "@src/utils/utils";
 import { colors } from "@src/themes/colors";
 
+const womanImg = require("@src/assets/backgrounds/woman.png")
+
 export default function Login() {
   const navigation = useNavigation()
   return (
     <ScrollView style={styles.container}>
       <StatusBar  backgroundColor="white" barStyle="dark-content" />
       <Image
-        source={require("../../assets/backgrounds/woman.png")}
+        source={womanImg}
         alt="woman"
       />
       <Heading style={styles.title}>Save your money</Heading>

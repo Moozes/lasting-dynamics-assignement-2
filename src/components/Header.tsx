@@ -1,5 +1,7 @@
 import { StyleSheet } from "react-native";
 import { View, Image } from "native-base";
+const logoIcon = require("@src/assets/icons/logo.png")
+const headerIcon = require("@src/assets/icons/chat.png")
 
 type Props = {
     bgColor : string
@@ -10,12 +12,12 @@ export default function Header({bgColor}: Props) {
     <View style={[styles.header, {backgroundColor: bgColor}]}>
       <Image
         alt="icon"
-        source={require("../assets/icons/logo.png")}
+        source={logoIcon}
         style={styles.headerIcon}
       />
       <Image
         alt="icon"
-        source={require("../assets/icons/chat.png")}
+        source={headerIcon}
         style={styles.headerIcon}
       />
     </View>

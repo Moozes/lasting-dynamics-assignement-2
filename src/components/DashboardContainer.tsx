@@ -40,17 +40,25 @@ const homeOptions: any = {
   ),
 };
 const extractOptions: any = {
-  tabBarIcon: ({ focused }: { focused: boolean }) => <DocumentIcon fill={focused ? colors.primary.default : colors.neutral["40"]} />,
+  tabBarIcon: ({ focused }: { focused: boolean }) => (
+    <DocumentIcon
+      fill={focused ? colors.primary.default : colors.neutral["40"]}
+    />
+  ),
 };
 
 const pagopaOptions: any = {
   tabBarIcon: ({ focused }: { focused: boolean }) => (
-    <PagopaIcon fill={focused ? colors.primary.default : colors.neutral["40"]} />
+    <PagopaIcon
+      fill={focused ? colors.primary.default : colors.neutral["40"]}
+    />
   ),
 };
 
 const profilOptions: any = {
-  tabBarIcon: ({ focused }: { focused: boolean }) => <UserIcon fill={focused ? colors.primary.default : colors.neutral["40"]} />,
+  tabBarIcon: ({ focused }: { focused: boolean }) => (
+    <UserIcon fill={focused ? colors.primary.default : colors.neutral["40"]} />
+  ),
 };
 
 export default function DashboardConainer() {
