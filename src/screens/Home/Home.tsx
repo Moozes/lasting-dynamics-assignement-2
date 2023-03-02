@@ -9,21 +9,21 @@ import Header from "@src/components/Header";
 import { colors } from "@src/themes/colors";
 
 export default function Home() {
-  const { loading } = useUserData();
+  const { loading, user } = useUserData();
 
   return (
     <ScrollView style={styles.container} >
       <StatusBar hidden />
       <Header bgColor={colors.primary.default}/>
       <View style={styles.hero}>
-        <Heading style={styles.heroHeading}>Hello, John S.</Heading>
+        <Heading style={styles.heroHeading}>Hello, {loading ? "loading..." : user?.name}</Heading>
         <Text style={styles.heroText}>Welcome in Moneylia</Text>
       </View>
       {loading ? (
         <ActivityIndicator style={styles.spinner} size="large" />
       ) : (
         <View style={styles.content}>
-          <UserCard style={styles.userCard} />
+          {user && <UserCard style={styles.userCard} user={user}/>}
           <Contributions />
         </View>
       )}

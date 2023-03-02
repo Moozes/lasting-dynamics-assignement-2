@@ -1,13 +1,13 @@
 {
     "user": [
         {
-            "id": 1,
+            "id": "1",
             "name": "John S.",
             "status": "Subscribed",
             "birthday": "26/01/1994",
             "city": "Barcelona",
             "country": "ES",
-            "Number": 100
+            "number": "100"
         }
     ],
     "payment": [

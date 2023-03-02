@@ -9,14 +9,25 @@ import {
   Pressable
 } from "native-base";
 import { StyleSheet } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { getFontStyles } from "@src/utils/utils";
 import { colors } from "@src/themes/colors";
+import { usePaymentData } from "./hooks/usePaymentData";
+import { ActivityIndicator } from "react-native";
 const leftArrowIcon = require("@src/assets/icons/arrow-left.png")
 const pagopaImg = require("@src/assets/backgrounds/pagopa.png")
 
 export default function PaymentDetails() {
   const navigation = useNavigation()
+  const {loading, paymentDetails} = usePaymentData()
+  if(loading) {
+    return <View style={styles.loadingContainer} >
+      <ActivityIndicator size="large" />
+    </View>
+  }
+  if(!paymentDetails) {
+    return <Text>Error fetching data</Text>
+  }
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -48,12 +59,11 @@ export default function PaymentDetails() {
         <Text style={styles.sub}>00147 (RM)</Text>
         <Divider style={styles.divider} />
         <Text style={styles.text}>Causal</Text>
-        <Text style={styles.sub}>SUBJECTIVE AND SUPPLEMENTARY</Text>
-        <Text style={styles.sub}> CONTRIBUTION YEAR 2021 EXPIRY</Text>
-        <Text style={styles.sub}> 28-02-2022</Text>
+        <Text style={styles.sub}>{paymentDetails.title}</Text>
+        <Text style={styles.sub}> {paymentDetails.date}</Text>
         <Divider style={styles.divider} />
         <Text style={styles.text}>Expiry date</Text>
-        <Text style={styles.sub}>02/28/2022</Text>
+        <Text style={styles.sub}>{paymentDetails.date}</Text>
         <Divider style={styles.divider} />
         <Text style={styles.text}>Creditor tax code</Text>
         <Text style={styles.sub}>8011911704444</Text>
@@ -64,7 +74,7 @@ export default function PaymentDetails() {
       <View style={styles.footer}>
         <View style={styles.footerRow}>
           <Text style={styles.footerText}>Total due</Text>
-          <Text style={styles.footerPrice}>€ 1,234.99</Text>
+          <Text style={styles.footerPrice}>€ {paymentDetails.price}</Text>
         </View>
         <Button
           style={styles.footerButton}
@@ -79,6 +89,11 @@ export default function PaymentDetails() {
 }
 
 const styles = StyleSheet.create({
+  loadingContainer: {
+    flexGrow: 1,
+    alignItems: "center",
+    justifyContent: "center"
+  },
   container: {
     flexGrow: 1,
     backgroundColor: "white",

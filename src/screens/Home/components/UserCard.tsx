@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import { View, Text, Image } from "native-base";
-import { ViewStyleProp } from "@src/types/types";
+import { TUser, ViewStyleProp } from "@src/types/types";
 import { getFontStyles } from "@src/utils/utils";
 import { colors } from "@src/themes/colors";
 
@@ -8,8 +8,9 @@ const userCircleIcon = require('@src/assets/icons/user-circle.png')
 
 type UserCardProps = {
   style?: ViewStyleProp;
+  user: TUser
 };
-export default function UserCard({style}: UserCardProps) {
+export default function UserCard({style, user}: UserCardProps) {
   return (
     <View style={[styles.card, style]}>
       <View style={styles.header}>
@@ -19,26 +20,26 @@ export default function UserCard({style}: UserCardProps) {
       <View style={styles.row1}>
         <View style={styles.status}>
           <Text style={styles.sub}>Status</Text>
-          <Text style={styles.normal}>Subscribed</Text>
+          <Text style={styles.normal}>{user.status}</Text>
         </View>
         <View style={styles.birthday}>
           <Text style={styles.sub}>Birthday</Text>
-          <Text style={styles.normal}>26/10/1994</Text>
+          <Text style={styles.normal}>{user.birthday}</Text>
         </View>
       </View>
       <View style={styles.row2}>
         <View style={styles.city}>
           <Text style={styles.sub}>City</Text>
-          <Text style={styles.normalPrimary}>Barcelona</Text>
+          <Text style={styles.normalPrimary}>{user.city}</Text>
         </View>
         <View style={styles.countryNumber}>
           <View style={styles.country}>
             <Text style={styles.sub}>Country</Text>
-            <Text style={styles.normalPrimary}>ES</Text>
+            <Text style={styles.normalPrimary}>{user.country}</Text>
           </View>
           <View style={styles.number}>
             <Text style={styles.sub}>Number</Text>
-            <Text style={styles.normalPrimary}>100</Text>
+            <Text style={styles.normalPrimary}>{user.number}</Text>
           </View>
         </View>
       </View>

@@ -19,7 +19,7 @@ import { colors } from "@src/themes/colors";
 const logo2Icon = require('@src/assets/icons/logo2.png')
 
 export default function PagoPa() {
-  const { loading } = useData();
+  const { loading, payments } = useData();
   const navigation = useNavigation()
   return (
     <ScrollView
@@ -43,10 +43,11 @@ export default function PagoPa() {
         {loading ? (
           <ActivityIndicator size="large" />
         ) : (
-          data.map((elm, i) => (
+          payments.map((elm, i) => (
             <Pressable
               key={i}
-              onPress={() => navigation.navigate("payment-details" as never)}
+              onPress={() => navigation.navigate("payment-details" as never, {id: elm.id} as never)}
+              _pressed={styles.pressed}
             >
               <Card
                 style={styles.card}
@@ -98,4 +99,7 @@ const styles = StyleSheet.create({
   card: {
     marginBottom: 12,
   },
+  pressed: {
+    opacity: 0.5
+  }
 });
