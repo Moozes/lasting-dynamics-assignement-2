@@ -9,9 +9,9 @@ import {
   Pressable
 } from "native-base";
 import { StyleSheet } from "react-native";
-import { getFontStyles } from "../../utils/utils";
 import { useNavigation } from "@react-navigation/native";
-import { colors } from "../../themes/colors";
+import { getFontStyles } from "@src/utils/utils";
+import { colors } from "@src/themes/colors";
 
 export default function PaymentDetails() {
   const navigation = useNavigation()

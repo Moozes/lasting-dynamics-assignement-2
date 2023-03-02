@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { fakeAPI } from "../../../utils/utils"
+import { fakeAPI } from "@src/utils/utils"
 
 export default function useData() {
     const [loading, setLoading] = useState(false)

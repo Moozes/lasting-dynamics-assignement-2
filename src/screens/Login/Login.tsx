@@ -1,8 +1,8 @@
 import { Text, View, Button, Heading, ScrollView, StatusBar } from "native-base";
 import { StyleSheet, Image } from "react-native";
-import { getFontStyles } from "../../utils/utils";
 import { useNavigation } from "@react-navigation/native";
-import { colors } from "../../themes/colors";
+import { getFontStyles } from "@src/utils/utils";
+import { colors } from "@src/themes/colors";
 
 export default function Login() {
   const navigation = useNavigation()

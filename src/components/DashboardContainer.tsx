@@ -1,13 +1,11 @@
 import { Image, Text } from "native-base";
-import { StyleSheet } from "react-native";
-import type { ScreenProps } from "../types/types";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Home from "../screens/Home/Home";
-import Extract from "../screens/Extract/Extract";
-import PagoPa from "../screens/PagoPa/PagoPa";
-import Profile from "../screens/Profile/Profile";
-import { getFontStyles } from "../utils/utils";
-import { colors } from "../themes/colors";
+import Home from "@src/screens/Home/Home";
+import Extract from "@src/screens/Extract/Extract";
+import PagoPa from "@src/screens/PagoPa/PagoPa";
+import Profile from "@src/screens/Profile/Profile";
+import { getFontStyles } from "@src/utils/utils";
+import { colors } from "@src/themes/colors";
 
 const houseIcon = require("../assets/icons/house.png");
 const houseActiveIcon = require("../assets/icons/house-active.png");

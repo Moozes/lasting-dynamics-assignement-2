@@ -1,8 +1,8 @@
 import { StyleSheet } from "react-native";
 import { View, Text, Image } from "native-base";
-import type { ViewStyleProp } from "../../../types/types";
-import { getFontStyles } from "../../../utils/utils";
-import { colors } from "../../../themes/colors";
+import { ViewStyleProp } from "@src/types/types";
+import { getFontStyles } from "@src/utils/utils";
+import { colors } from "@src/themes/colors";
 
 type UserCardProps = {
   style?: ViewStyleProp;

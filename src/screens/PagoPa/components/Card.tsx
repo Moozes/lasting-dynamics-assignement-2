@@ -1,8 +1,8 @@
 import { Heading, Image, View, Text } from "native-base";
 import { StyleSheet } from "react-native";
-import { colors } from "../../../themes/colors";
-import { ViewStyleProp } from "../../../types/types";
-import { getFontStyles } from "../../../utils/utils";
+import { colors } from "@src/themes/colors";
+import { ViewStyleProp } from "@src/types/types";
+import { getFontStyles } from "@src/utils/utils";
 
 type CardProps = {
   title: string;

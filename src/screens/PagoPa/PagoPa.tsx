@@ -8,14 +8,14 @@ import {
   Image
 } from "native-base";
 import { StyleSheet } from "react-native";
-import { getFontStyles } from "../../utils/utils";
 import Card from "./components/Card";
 import { data } from "./components/data";
 import useData from "./hooks/useData";
 import { ActivityIndicator } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import Header from "../../components/Header";
-import { colors } from "../../themes/colors";
+import { getFontStyles } from "@src/utils/utils";
+import Header from "@src/components/Header";
+import { colors } from "@src/themes/colors";
 
 
 export default function PagoPa() {

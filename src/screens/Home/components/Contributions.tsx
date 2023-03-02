@@ -1,7 +1,7 @@
 import { Heading, View, Text, Image } from "native-base";
 import { StyleSheet } from "react-native";
-import { colors } from "../../../themes/colors";
-import { getFontStyles } from "../../../utils/utils";
+import { colors } from "@src/themes/colors";
+import { getFontStyles } from "@src/utils/utils";
 
 export default function Contributions() {
     return (

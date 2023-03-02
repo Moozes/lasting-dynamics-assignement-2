@@ -1,12 +1,12 @@
 import { StyleSheet } from "react-native";
-import { Text, View, ScrollView, StatusBar, Heading, Image } from "native-base";
-import { getFontStyles } from "../../utils/utils";
+import { Text, View, ScrollView, StatusBar, Heading } from "native-base";
+import { getFontStyles } from "@src/utils/utils";
 import UserCard from "./components/UserCard";
 import Contributions from "./components/Contributions";
 import useUserData from "./hooks/useUserData";
 import { ActivityIndicator } from "react-native";
-import Header from "../../components/Header";
-import { colors } from "../../themes/colors";
+import Header from "@src/components/Header";
+import { colors } from "@src/themes/colors";
 
 export default function Home() {
   const { loading } = useUserData();
