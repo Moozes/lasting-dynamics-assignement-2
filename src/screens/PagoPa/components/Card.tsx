@@ -22,7 +22,7 @@ export default function Card({ title, date, price, style }: CardProps) {
         source={pagopaImg}
       />
       <View style={styles.content}>
-        <Heading style={styles.title}> {title} </Heading>
+        <Heading  numberOfLines={1} style={styles.title}> {title} </Heading>
         <View style={styles.footer}>
           <Text style={styles.date}> {date} </Text>
           <Text style={styles.price}> € {price} </Text>
@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
   },
   title: {
     ...getFontStyles(400, 14, 16, colors.neutral["100"]),
+    width: 200
   },
   footer: {
     flexDirection: "row",
