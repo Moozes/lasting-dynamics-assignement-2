@@ -6,37 +6,39 @@ import {
   Divider,
   Button,
   Image,
-  Pressable
+  Pressable,
 } from "native-base";
 import { StyleSheet } from "react-native";
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import { getFontStyles } from "@src/utils/utils";
 import { colors } from "@src/themes/colors";
 import { usePaymentData } from "./hooks/usePaymentData";
 import { ActivityIndicator } from "react-native";
-const leftArrowIcon = require("@src/assets/icons/arrow-left.png")
-const pagopaImg = require("@src/assets/backgrounds/pagopa.png")
+const leftArrowIcon = require("@src/assets/icons/arrow-left.png");
+const pagopaImg = require("@src/assets/backgrounds/pagopa.png");
 
 export default function PaymentDetails() {
-  const navigation = useNavigation()
-  const {loading, paymentDetails} = usePaymentData()
-  if(loading) {
-    return <View style={styles.loadingContainer} >
-      <ActivityIndicator size="large" />
-    </View>
+  const navigation = useNavigation();
+  const { loading, paymentDetails } = usePaymentData();
+  if (loading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
   }
-  if(!paymentDetails) {
-    return <Text>Error fetching data</Text>
+  if (!paymentDetails) {
+    return (
+      <View style={styles.errorContainer}>
+        <Text style={styles.error}>Error fetching data</Text>
+      </View>
+    );
   }
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Pressable onPress={() => navigation.goBack()} >
-            <Image
-            source={leftArrowIcon}
-            alt="icon"
-            style={styles.headerIcon}
-            />
+        <Pressable onPress={() => navigation.goBack()}>
+          <Image source={leftArrowIcon} alt="icon" style={styles.headerIcon} />
         </Pressable>
         <Text style={styles.headerTitle}>Payment details</Text>
       </View>
@@ -46,11 +48,7 @@ export default function PaymentDetails() {
       >
         <View style={styles.titleContainer}>
           <Heading style={styles.title}>Payment notice</Heading>
-          <Image
-            alt="pagopa"
-            source={pagopaImg}
-            style={styles.icon}
-          />
+          <Image alt="pagopa" source={pagopaImg} style={styles.icon} />
         </View>
         <Divider style={styles.divider} />
         <Text style={styles.text}>Creditor</Text>
@@ -92,7 +90,16 @@ const styles = StyleSheet.create({
   loadingContainer: {
     flexGrow: 1,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+  },
+  errorContainer: {
+    flexGrow: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  error: {
+    textAlign: "center",
+    color: colors.states.error,
   },
   container: {
     flexGrow: 1,

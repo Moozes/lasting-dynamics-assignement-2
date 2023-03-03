@@ -22,10 +22,13 @@ export default function Home() {
       {loading ? (
         <ActivityIndicator style={styles.spinner} size="large" />
       ) : (
+        <>
         <View style={styles.content}>
           {user && <UserCard style={styles.userCard} user={user}/>}
-          <Contributions />
+          {user && <Contributions />}
         </View>
+        {!user && <Text style={styles.error} >Error fetching user data</Text>}
+        </>
       )}
     </ScrollView>
   );
@@ -58,5 +61,10 @@ const styles = StyleSheet.create({
   },
   spinner: {
     marginTop: 20,
+  },
+  error: {
+    textAlign: "center",
+    marginTop: 40,
+    color: colors.states.error 
   }
 });

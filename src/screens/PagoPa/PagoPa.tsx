@@ -5,34 +5,31 @@ import {
   StatusBar,
   Heading,
   Pressable,
-  Image
+  Image,
 } from "native-base";
 import { StyleSheet } from "react-native";
 import Card from "./components/Card";
-import { data } from "./components/data";
 import useData from "./hooks/useData";
 import { ActivityIndicator } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { getFontStyles } from "@src/utils/utils";
 import Header from "@src/components/Header";
 import { colors } from "@src/themes/colors";
-const logo2Icon = require('@src/assets/icons/logo2.png')
+const logo2Icon = require("@src/assets/icons/logo2.png");
 
 export default function PagoPa() {
-  const { loading, payments } = useData();
-  const navigation = useNavigation()
+  const { loading, payments, error } = useData();
+  const navigation = useNavigation();
   return (
     <ScrollView
       style={styles.container}
       _contentContainerStyle={{ paddingBottom: 10 }}
     >
-      <StatusBar
-        hidden
-      />
-      <Header bgColor={colors.services.rose}/>
+      <StatusBar hidden />
+      <Header bgColor={colors.services.rose} />
       <View style={styles.hero}>
         <Text style={styles.heroText}>Tax payments</Text>
-        <Image alt="logo2" source={logo2Icon} style={styles.heroIcon}/>
+        <Image alt="logo2" source={logo2Icon} style={styles.heroIcon} />
       </View>
       <View style={styles.content}>
         <Heading style={styles.title}>Movements to pay</Heading>
@@ -43,21 +40,26 @@ export default function PagoPa() {
         {loading ? (
           <ActivityIndicator size="large" />
         ) : (
-          payments.map((elm, i) => (
-            <Pressable
-              key={i}
-              onPress={() => navigation.navigate("payment-details" as never, {id: elm.id} as never)}
-              _pressed={styles.pressed}
-            >
-              <Card
-                style={styles.card}
-                {...elm}
-                // title={elm.title}
-                // date={elm.date}
-                // price={elm.price}
-              />
-            </Pressable>
-          ))
+          <>
+            {payments.map((elm, i) => (
+              <Pressable
+                key={i}
+                onPress={() =>
+                  navigation.navigate(
+                    "payment-details" as never,
+                    { id: elm.id } as never
+                  )
+                }
+                _pressed={styles.pressed}
+              >
+                <Card
+                  style={styles.card}
+                  {...elm}
+                />
+              </Pressable>
+            ))}
+            {error && <Text style={styles.error}>Error loading data</Text>}
+          </>
         )}
       </View>
     </ScrollView>
@@ -66,7 +68,7 @@ export default function PagoPa() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.background.default
+    backgroundColor: colors.background.default,
   },
   hero: {
     backgroundColor: colors.services.rose,
@@ -77,13 +79,12 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 16,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
   },
   heroText: {
     ...getFontStyles(600, 24, 28, colors.neutral.white),
   },
-  heroIcon: {
-  },
+  heroIcon: {},
   content: {
     paddingHorizontal: 16,
     paddingTop: 24,
@@ -100,6 +101,10 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   pressed: {
-    opacity: 0.5
-  }
+    opacity: 0.5,
+  },
+  error: {
+    textAlign: "center",
+    color: colors.states.error,
+  },
 });
