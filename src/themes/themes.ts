@@ -5,12 +5,12 @@ export const theme = extendTheme({
     components: {
         Text: {
             baseStyle: {
-                fontFamily: 'Work Sans'
+                fontFamily: 'WorkSans-VariableFont_wght'
             }
         },
         Heading: {
             baseStyle: {
-                fontFamily: 'Work Sans'
+                fontFamily: 'WorkSans-VariableFont_wght'
             }
         },
     }
