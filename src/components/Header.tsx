@@ -14,11 +14,13 @@ export default function Header({bgColor}: Props) {
         alt="icon"
         source={logoIcon}
         style={styles.headerIcon}
-      />
+        testID="icon1"
+        />
       <Image
         alt="icon"
         source={headerIcon}
         style={styles.headerIcon}
+        testID="icon2"
       />
     </View>
   );
