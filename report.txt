@@ -1,0 +1,15 @@
+change function names to verbs
+set up a json server to actually fetch data
+use variables for colors
+change folder names to match component names
+use navigation hook instead of props.navigation.navigate
+use absolute imports
+extract require image to a variable
+fix fontfamilly  
+
+extract header to a component
+use svgs, react-native-svg-transformer
+textoverflow in payment cards
+
+added one test
+add error messages in UI for fetching failures, (ex: json server is down)
